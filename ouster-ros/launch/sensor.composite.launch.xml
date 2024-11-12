@@ -2,7 +2,7 @@
 
   <arg name="ouster_ns" default="ouster"
     description="Override the default namespace of all ouster nodes"/>
-  <arg name="sensor_hostname"
+  <arg name="sensor_hostname" default="192.168.1.101"
     description="hostname or IP in dotted decimal form of the sensor"/>
   <arg name="udp_dest" default=""
     description="hostname or IP where the sensor will send data packets"/>
@@ -36,9 +36,9 @@
     }"/>
   <arg name="ptp_utc_tai_offset" default="-37.0"
     description="UTC/TAI offset in seconds to apply when using TIME_FROM_PTP_1588"/>
-  <arg name="metadata" default=""
+  <arg name="metadata" default="/home/$(env USER)/ouster-metadata.json"
     description="path to write metadata file when receiving sensor data"/>
-  <arg name="viz" default="true"
+  <arg name="viz" default="false"
     description="whether to run a rviz"/>
   <arg name="rviz_config" default="$(find-pkg-share ouster_ros)/config/viz.rviz"
     description="optional rviz config file"/>
@@ -58,7 +58,7 @@
     for the imu/sensor/lidar frames. Prevent the driver from broadcasting TF transforms by
     setting this parameter to False."/>
 
-  <arg name="use_system_default_qos" default="false"
+  <arg name="use_system_default_qos" default="true"
     description="Use the default system QoS settings"/>
   
   <arg name="proc_mask" default="IMG|PCL|IMU|SCAN" description="
