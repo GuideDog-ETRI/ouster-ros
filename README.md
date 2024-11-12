@@ -1,4 +1,4 @@
-# Official ROS driver for Ouster sensors
+# Ouster sensor의 Official ROS driver 가이드독 수정판 
 
 [ROS1 (melodic/noetic)](https://github.com/ouster-lidar/ouster-ros/tree/master) |
 [ROS2 (rolling/humble/iron/jazzy)](https://github.com/ouster-lidar/ouster-ros/tree/ros2) |
@@ -37,6 +37,9 @@
 
 
 ## Overview
+
+이 패키지는 가이드독 프로젝트를 위한 Ouster driver 공식 ROS2 Wrapper의 수정판입니다.
+
 
 This ROS package provide support for all Ouster sensors with FW v2.0 or later targeting ros2 distros.
 Upon launch the driver will configure and connect to the selected sensor device, once connected the 
