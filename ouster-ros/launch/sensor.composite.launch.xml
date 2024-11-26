@@ -6,11 +6,11 @@
     description="hostname or IP in dotted decimal form of the sensor"/>
   <arg name="udp_dest" default=""
     description="hostname or IP where the sensor will send data packets"/>
-  <arg name="lidar_port" default="0"
+  <arg name="lidar_port" default="7502"
     description="port to which the sensor should send lidar data"/>
-  <arg name="imu_port" default="0"
+  <arg name="imu_port" default="7503"
     description="port to which the sensor should send imu data"/>
-  <arg name="udp_profile_lidar" default=""
+  <arg name="udp_profile_lidar" default="RNG19_RFL8_SIG16_NIR16"
     description="lidar packet profile; possible values: {
     LEGACY,
     RNG19_RFL8_SIG16_NIR16,
@@ -18,7 +18,7 @@
     RNG19_RFL8_SIG16_NIR16_DUAL,
     FUSA_RNG15_RFL8_NIR8_DUAL
     }"/>
-  <arg name="lidar_mode" default=""
+  <arg name="lidar_mode" default="1024x10"
     description="resolution and rate; possible values: {
     512x10,
     512x20,
@@ -45,7 +45,7 @@
 
   <arg name="sensor_frame" default="os_sensor"
     description="sets name of choice for the sensor_frame tf frame, value can not be empty"/>
-  <arg name="lidar_frame" default="os_lidar"
+  <arg name="lidar_frame" default="os_sensor"
     description="sets name of choice for the os_lidar tf frame, value can not be empty"/>
   <arg name="imu_frame" default="os_imu"
       description="sets name of choice for the os_imu tf frame, value can not be empty"/>
