@@ -72,7 +72,8 @@ ouster/os_driver:
     # data QoS. This is preferrable for production but default QoS is needed for
     # rosbag. See: https://github.com/ros2/rosbag2/issues/125
     use_system_default_qos: false
-    # point_type[optional]: choose from: {original, native, xyz, xyzi, xyzir}
+    # point_type[optional]: choose from: {original, native, xyz, xyzi, o_xyzi, 
+    #                                     yzir}
     # Here is a breif description of each option:
     #  - original: This uses the original point representation ouster_ros::Point
     #          of the ouster-ros driver.
@@ -82,6 +83,7 @@ ouster/os_driver:
     #  - xyz: the simplest point type, only has {x, y, z}
     #  - xyzi: same as xyz point type but adds intensity (signal) field. this
     #          type is not compatible with the low data profile.
+    #  - o_xyzi: same as xyzi point type but doesn't add the extra 4 padding bytes.
     #  - xyzir: same as xyzi type but adds ring (channel) field.
     #          this type is same as Velodyne point cloud type
     #          this type is not compatible with the low data profile.
@@ -115,6 +117,8 @@ ouster/os_driver:
     min_range: 0.0
     # max_range[optional]: maximum lidar range to consider (meters).
     max_range: 1000.0
+    # v_reduction[optional]: vertical beam reduction; available options: {1, 2, 4, 8, 16}.
+    v_reduction: 1
     # min_scan_valid_columns_ratio[optional]: The minimum ratio of valid columns for
     # processing the LidarScan [0, 1]. default is 0%
     min_scan_valid_columns_ratio: 0.0

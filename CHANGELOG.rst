@@ -13,7 +13,15 @@ Changelog
   the topic can be turned on/off by including the token ``TLM`` in the flag ``proc_mask`` launch arg.
 * Add a new launch file parameter ``min_scan_valid_columns_ratio`` to allow users to set the minimum
   ratio of valid columns in a scan for it to be processed. Default value is ``0.0``.
-* Update where ouster-ros and ouster_client include directories get installed so that those headers can be included externally.
+* Update where ouster-ros and ouster_client include directories get installed so that those headers
+  can be included externally.
+* Add ``storage`` launch parameter to ``record.launch.xml``
+* Add a padding-free point type of ``PointXYZI`` under ``ouster_ros`` namespace contrary to the pcl
+  version ``pcl::PointXYZI`` for bandwith sensitive applications.
+* [BUGFIX]: Use the node clock to ensure messages report sim time in replay mode.
+* Introduce a new param ``v_reduction`` that allows reducing the number of beams count of the published
+  point cloud
+
 
 ouster_ros v0.13.2
 ==================
